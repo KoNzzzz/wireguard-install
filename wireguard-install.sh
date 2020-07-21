@@ -12,17 +12,17 @@ function addClient() {
 		ENDPOINT="$SERVER_PUB_IP:$SERVER_PORT"
 	fi
 
-	CLIENT_WG_IPV4="10.66.66.2"
+	CLIENT_WG_IPV4="10.0.0.2"
 	read -rp "Client's WireGuard IPv4 " -e -i "$CLIENT_WG_IPV4" CLIENT_WG_IPV4
 
 	CLIENT_WG_IPV6="fd42:42:42::2"
 	read -rp "Client's WireGuard IPv6 " -e -i "$CLIENT_WG_IPV6" CLIENT_WG_IPV6
 
 	# Adguard DNS by default
-	CLIENT_DNS_1="176.103.130.130"
+	CLIENT_DNS_1="1.1.1.1"
 	read -rp "First DNS resolver to use for the client: " -e -i "$CLIENT_DNS_1" CLIENT_DNS_1
 
-	CLIENT_DNS_2="176.103.130.131"
+	CLIENT_DNS_2="1.0.0.1"
 	read -rp "Second DNS resolver to use for the client: " -e -i "$CLIENT_DNS_2" CLIENT_DNS_2
 
 	CLIENT_NAME=$(
@@ -121,7 +121,7 @@ read -rp "Public interface: " -e -i "$SERVER_PUB_NIC" SERVER_PUB_NIC
 SERVER_WG_NIC="wg0"
 read -rp "WireGuard interface name: " -e -i "$SERVER_WG_NIC" SERVER_WG_NIC
 
-SERVER_WG_IPV4="10.66.66.1"
+SERVER_WG_IPV4="10.0.0.1"
 read -rp "Server's WireGuard IPv4: " -e -i "$SERVER_WG_IPV4" SERVER_WG_IPV4
 
 SERVER_WG_IPV6="fd42:42:42::1"
